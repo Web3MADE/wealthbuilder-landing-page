@@ -1,18 +1,19 @@
-# WealthBuilder
+# WealthBuilder landing page
 
-Minimal landing-page scaffold using Next.js App Router, TypeScript, Tailwind CSS, and ESLint. 
-## Local development
+Next.js App Router landing page built with TypeScript, Tailwind CSS, and the supplied WealthBuilder assets. The Early Access form validates email and shows a frontend success state; it does not save submissions yet.
 
-Use Node.js 24 LTS and pnpm 10.18.3 (pinned in `package.json`).
+## Run locally
+
+Use Node.js 24 and pnpm 10.18.3.
 
 ```sh
 pnpm install
 pnpm dev
 ```
 
-Open http://localhost:3000. Edit `src/app/page.tsx` to update the page.
+Open http://localhost:3000.
 
-## Checks and production
+## Check and build
 
 ```sh
 pnpm lint
@@ -20,18 +21,9 @@ pnpm build
 pnpm start
 ```
 
-`pnpm lint` runs ESLint. `pnpm build` creates an optimized production build and
-checks TypeScript. `pnpm start` serves that build locally. Run lint and build
-before deploying. Commit `pnpm-lock.yaml` for reproducible installs; CI can use
-`pnpm install --frozen-lockfile`.
+`pnpm start` serves the production build. Before deploying, set `NEXT_PUBLIC_SITE_URL` to the public site origin (for example, `https://your-domain.example`) so Open Graph images use the correct absolute URL. On Vercel, `VERCEL_URL` is used when `NEXT_PUBLIC_SITE_URL` is absent.
 
-## Structure
+The visual assets live in `public/assets`. Page content is in `src/app/page.tsx`; the header, footer, and form are in `src/components`. No backend, auth, analytics, or database is configured.
 
-- `src/app/layout.tsx`: root layout and WealthBuilder metadata.
-- `src/app/page.tsx`: hero and placeholder sections.
-- `src/app/globals.css`: Tailwind import and minimal global styles.
-- `src/components/`: shared site header and footer.
-
-The project intentionally has no database, authentication, analytics, component
-library, or signup backend. Git initialization and hosting setup are managed
-manually.
+The About page is at `/about`. Its founder profile links are defined in
+`src/app/about/page.tsx`.
