@@ -1,18 +1,26 @@
 import type { Metadata } from "next";
+import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+const title = "WealthBuilder | Your Personal Crypto Bank";
+const description = "Build long-term crypto wealth on your terms with a self-custodial, AI-assisted personal crypto platform.";
+const socialImage = "/assets/WB_moreThanInvesting_section.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "WealthBuilder — Your Personal Crypto Bank",
-  description: "A personal crypto bank for long-term crypto wealth building.",
+  title,
+  description,
+  applicationName: "WealthBuilder",
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "WealthBuilder — Your Personal Crypto Bank",
-    description: "A personal crypto bank for long-term crypto wealth building.",
+    title,
+    description,
+    url: "/",
+    siteName: "WealthBuilder",
     type: "website",
-    images: [{ url: "/assets/WB_backgroundImage.png", width: 1672, height: 941, alt: "Dark green mountain landscape" }],
+    images: [{ url: socialImage, width: 1672, height: 941, alt: "WealthBuilder: built for more than investing" }],
   },
+  twitter: { card: "summary_large_image", title, description, images: [socialImage] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

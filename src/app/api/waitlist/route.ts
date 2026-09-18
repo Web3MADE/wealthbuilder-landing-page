@@ -116,7 +116,6 @@ export async function POST(request: Request) {
   try {
     const response = await fetchWebhookResult(webhookUrl, email);
     const result = classifyWebhookResponse(await response.text());
-    console.log("result ", result)
     if (result === "already_registered") {
       return reply("already_registered", "You’re already on the list.", 200);
     }

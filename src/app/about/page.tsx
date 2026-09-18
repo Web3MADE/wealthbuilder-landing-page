@@ -6,23 +6,31 @@ import { MotionObserver } from "@/components/motion-observer";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
+const aboutTitle = "About WealthBuilder | Our Mission & Founder";
+const aboutDescription =
+  "Meet the founder and learn why WealthBuilder is building a simpler, self-custodial financial home for crypto.";
+const socialImage = "/assets/WB_moreThanInvesting_section.png";
+
 export const metadata: Metadata = {
-  title: "About WealthBuilder — Your Personal Crypto Bank",
-  description:
-    "Learn why WealthBuilder is building a simpler, self-custodial financial home for crypto.",
+  title: aboutTitle,
+  description: aboutDescription,
+  alternates: { canonical: "/about" },
   openGraph: {
-    title: "About WealthBuilder — Your Personal Crypto Bank",
-    description:
-      "Learn why WealthBuilder is building a simpler, self-custodial financial home for crypto.",
+    title: aboutTitle,
+    description: aboutDescription,
+    url: "/about",
+    siteName: "WealthBuilder",
+    type: "website",
     images: [
       {
-        url: "/assets/WB_background_2.png",
+        url: socialImage,
         width: 1672,
         height: 941,
-        alt: "Dark green landscape with a glowing horizon",
+        alt: "WealthBuilder: built for more than investing",
       },
     ],
   },
+  twitter: { card: "summary_large_image", title: aboutTitle, description: aboutDescription, images: [socialImage] },
 };
 
 const trustPoints = [

@@ -63,3 +63,4 @@ The core application is being developed separately.
 ```bash
 pnpm install
 pnpm run dev
+```
