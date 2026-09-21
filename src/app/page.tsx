@@ -41,11 +41,18 @@ export default function Home() {
             <div className="hero-glow" aria-hidden="true" />
             <div className="container hero-layout">
               <div className="hero-copy">
+                <p className="hero-kicker"><span aria-hidden="true" />Build a brighter tomorrow</p>
                 <h1 id="hero-title">Your Personal<br /><span>Crypto Bank</span></h1>
                 <p className="hero-lead">Starting with long-term crypto wealth building.</p>
                 <p className="hero-description">Keep your crypto in one place, define how you want to build wealth, and let WealthBuilder handle the complexity.</p>
                 <a className="button button-hero" href="#early-access">Join Early Access <span aria-hidden="true">→</span></a>
-                <p className="trust-line">Self-custodial <span>·</span> AI-assisted <span>·</span> Security-first</p>
+                <div className="trust-line" aria-label="Self-custodial, AI-assisted, security-first">
+                  <div className="trust-item"><span className="trust-bullet" aria-hidden="true" /><span>Self-custodial</span></div>
+                  <span className="trust-divider" aria-hidden="true" />
+                  <div className="trust-item"><span className="trust-bullet" aria-hidden="true" /><span>AI-assisted</span></div>
+                  <span className="trust-divider" aria-hidden="true" />
+                  <div className="trust-item"><span className="trust-bullet" aria-hidden="true" /><span>Security-first</span></div>
+                </div>
               </div>
               <div className="hero-product">
                 <Image src={`${asset}WB_product_rightFacing.png`} alt="WealthBuilder product interface shown on a phone" width={1086} height={1448} priority sizes="(max-width: 760px) 70vw, 45vw" />
